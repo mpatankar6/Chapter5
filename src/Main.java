@@ -114,3 +114,43 @@ public class Main {
         System.out.println(removeTag("Happy <b>Hello World</b> Birthday", "b"));
     }
 }
+
+/** Output
+ * ello WorldH
+ * appyh
+ * h
+ * Lori Renee Reubenstein
+ * Joe Biden
+ * Bozo the Clown
+ * 1101000110
+ * 00000000
+ * 04/20/2014 becomes 20-04-2014
+ * 04/20/2014 becomes 20-04-2014
+ * 4/20/2014 becomes 20-4-2014
+ * 04/2/2014 becomes 2-04-2014
+ * 4/2/2014 becomes 2-4-2014
+ *
+ * startsWith
+ * true
+ * true
+ * false
+ * false
+ * true
+ *
+ * endsWith
+ * true
+ * true
+ * false
+ * false
+ * true
+ *
+ * removeTag
+ * Hello World
+ * <b>Hello World</b>
+ * Hello World</b>
+ * <b>Hello World
+ * Hello World
+ * Happy Birthday Hello World
+ * Hello World Happy Birthday
+ * Happy Hello World Birthday
+ */
