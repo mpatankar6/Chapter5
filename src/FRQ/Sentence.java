@@ -58,8 +58,15 @@ public class Sentence {
      * Postcondition: the current sentence is not modified.
      */
     public int findLastTime(String str) {
-        /* part c - you must call findNthTime here */
-        return -1;  // replace this
+        int i = 1;
+        if(findNthTime(str, i) != -1) {
+            while(findNthTime(str, i) != -1){
+                i++;
+            }
+            return findNthTime(str, i - 1);
+
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
