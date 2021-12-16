@@ -21,11 +21,19 @@ public class Sentence {
      */
     public int findNthTime(String str, int n) {
         int newIndex = 0;
-        for (int i = 1; i <= n; i++) {
-            if (newIndex != -1) {
-                newIndex = currSent.indexOf(str, newIndex + (str.length()-1));
+        for (int i = 0; i < n; i++) {
+            if (currSent.contains(" ")) {
+                if (newIndex != -1) {
+                    newIndex = currSent.indexOf(str, newIndex + (str.length() - 1));
+                } else {
+                    return -1;
+                }
             } else {
-                return -1;
+                if (newIndex != -1) {
+                    newIndex = currSent.indexOf(str, newIndex + i * (str.length()));
+                } else {
+                    return -1;
+                }
             }
         }
         return newIndex;
@@ -39,9 +47,8 @@ public class Sentence {
     public void replaceNthTime(String str, int n, String repl) {
         int index = findNthTime(str, n);
         if (index != -1) {
-            currSent = (currSent.substring(0, index)) + repl + (currSent.substring(index, repl.length()));
+            currSent = (currSent.substring(0, index)) + (currSent.substring(index, index + str.length()).replace(str, repl)) + (currSent.substring(index + str.length()));
         }
-
 
     }
 
